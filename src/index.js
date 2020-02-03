@@ -20,7 +20,6 @@ const rootReducer = combineReducers({
   auth: authReducer
 });
 
-console.log(process.env.NODE_ENV);
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 const app = (
