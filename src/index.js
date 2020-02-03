@@ -12,12 +12,15 @@ import burgerBuilderReducer from 'store/reducers/burgerBuilder.reducer';
 import orderReducer from 'store/reducers/order.reducer';
 import authReducer from 'store/reducers/auth.reducer';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+  process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 const rootReducer = combineReducers({
   burgerBuilder: burgerBuilderReducer,
   order: orderReducer,
   auth: authReducer
 });
+
+console.log(process.env.NODE_ENV);
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 const app = (
