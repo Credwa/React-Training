@@ -1,10 +1,9 @@
 /*
  * handles side effects
  */
-import { delay } from 'redux-saga/effects';
-import { put } from 'redux-saga/effects';
-import * as actions from 'store/actions/auth.action';
 import axios from 'axios';
+import { delay, put } from 'redux-saga/effects';
+import * as actions from 'store/actions/auth.action';
 
 export default {
   logoutSaga: function*(action) {
@@ -58,8 +57,7 @@ export default {
         yield put(actions.logout());
       } else {
         yield put(actions.authSuccess(token, localStorage.getItem('userId')));
-        let time = (expirationDate.getTime() - new Date().getTime()) / 1000;
-        yield put(actions.checkAuthTimeout(time));
+        yield put(actions.checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000));
       }
     }
   }

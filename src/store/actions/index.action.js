@@ -1,15 +1,13 @@
-export { addIngredient, removeIngredient, initIngredients } from './burgerBuilder.action';
-
-export { purchaseBurger, purchaseInit, fetchOrders } from './order.action';
-
 export {
   auth,
-  logout,
-  setAuthRedirectPath,
   authCheckState,
-  logoutSuccess,
+  authFailed,
   authStart,
   authSuccess,
-  authFailed,
-  checkAuthTimeout
+  checkAuthTimeout,
+  logout,
+  logoutSuccess,
+  setAuthRedirectPath
 } from './auth.action';
+export { addIngredient, initIngredients, removeIngredient } from './burgerBuilder.action';
+export { fetchOrders, purchaseBurger, purchaseInit } from './order.action';

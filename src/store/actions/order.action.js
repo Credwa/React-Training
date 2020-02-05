@@ -1,5 +1,5 @@
-import * as actionTypes from 'store/actions/actionTypes';
 import axios from 'services/axios-orders';
+import * as actionTypes from 'store/actions/actionTypes';
 
 export const purchaseBurgerSuccess = (id, orderData) => ({
   type: actionTypes.PURCHASE_BURGER_SUCCESS,
@@ -48,7 +48,6 @@ export const fetchOrdersStart = () => ({
 
 export const fetchOrders = (token, userId) => dispatch => {
   dispatch(fetchOrdersStart());
-  console.log(userId);
   const queryParams = `?auth=${token}&orderBy="userId"&equalTo="${userId}"`;
   axios
     .get(`/orders.json${queryParams}`)
