@@ -6,6 +6,9 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+Create a file called .env and add
+REACT_APP_FIREBASE_API_KEY={FIREBASE API KEY HERE}
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
